@@ -1,9 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
+
+articles = {
+    'sports':'Sports Page',
+    'finance': 'Finance Page',
+    'thelema': 'Thelemic Page',
+}
 
 def sports_view(request):
-    return HttpResponse('Sports View!')
+    return HttpResponse(article[thelema])
 
 def finance_view(request):
-    return HttpResponse('Finance View!')
+    return HttpResponse(article[finance])
