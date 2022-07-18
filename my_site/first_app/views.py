@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseNotFound, Http404
+from django.http import HttpResponse,HttpResponseNotFound, Http404, HttpResponseRedirect
 
 articles = {
     'sports':'Sports Page',
@@ -19,3 +19,8 @@ def addition_view(request, num1, num2):
     product = num1 ** num2
     output = f'{num1} exponent {num2} = {product}' 
     return HttpResponse(str(output))
+
+def num_page_view(request, num_page):
+    topics_list = list(articles.keys())
+    topic = topics_list[num_page]
+    return HttpResponseRedirect(topic)
