@@ -1,5 +1,9 @@
-<h1> Example HTML Template Connected</h1>
+{% extends 'base.html' %}
 
+{% block content %}
 
+<h4> THis is inside the block</h4>
 
 <h2> <a href="{% url 'my_app:variable' %}">Click me to go to variable (ii)</a></h2>
+
+{% endblock  %}
