@@ -8,8 +8,8 @@ def example_view(request):
 
 def variable_view(request):
     my_var = {
-        'first_name': 'Aleister',
-        'last_name': 'Crowley',
+        'first_name': 'aleister',
+        'last_name': 'crowley',
         'author_list': ['Paul F. Case','Arthur E. Waite','Manly P. Hall',],
         'some_dict': {'inside_key':'inside_value'},
         }
