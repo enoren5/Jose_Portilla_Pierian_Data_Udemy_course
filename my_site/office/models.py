@@ -3,6 +3,7 @@ from django.db import models
 from datetime import datetime, date
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils import timezone
+import django.contrib.humanize
 import humanize
 
 # Create your models here.
@@ -16,7 +17,7 @@ class Patient(models.Model):
     
     def calculated_age(self):
         td = timezone.now() - self.dob
-        return str(td)
+        return f'This is precisely how old you are: {humanize.precisedelta(td)}'
         # return humanize.naturaldate(str(td))
         #return td.strftime("%Y %m %d")
 
