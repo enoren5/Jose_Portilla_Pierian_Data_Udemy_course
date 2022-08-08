@@ -15,15 +15,16 @@ class Patient(models.Model):
     heartrate = models.IntegerField(default=60,validators=[MinValueValidator(50), MaxValueValidator(180)])
     dob = models.DateTimeField(default=datetime(1957,6,6)) # Proper more precise date of birth to be calculated in method below
     
+    '''
     def calculated_age(self):
         td = timezone.now() - self.dob
         return f'This is precisely how old you are: {humanize.precisedelta(td)}'
         # return humanize.naturaldate(str(td))
         #return td.strftime("%Y %m %d")
-
+    '''
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} is {self.age} years old"
+        return f"{self.first_name} {self.last_name} is precisely this age: {humanize.precisedelta(datetime.now(tz=timezone.utc) - self.dob)}."
 
     def __repr__(self):
-        return f"{self.first_name} {self.last_name} is {self.age} years old"
+        return f"{self.first_name} {self.last_name} is precisely this age: {humanize.precisedelta(datetime.now(tz=timezone.utc) - self.dob)}."
