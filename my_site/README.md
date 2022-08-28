@@ -85,3 +85,6 @@ If I accidentally input incorrect data and wish to alter an existing entry in my
 >>> c.last_name = 'Smith'
 >>> c.save()
 ```
+### MORE : Section 11: Lectures 76, 77, 78, 79, 80, 81 :
+Additional notes on Querying DB can be found in `office/views.py` and `office/templates/office/list.html`
+Those annotations cover material involving how to interface and interact with database in views and templates instead of Django shell
