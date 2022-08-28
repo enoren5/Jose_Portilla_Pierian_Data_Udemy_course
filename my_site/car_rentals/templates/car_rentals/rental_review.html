@@ -2,6 +2,16 @@
 
 <form method="POST">
     {% csrf_token %}
-    {{ form }}
+    {{ form.as_p }}
+    <input type="submit">
+</form>
+<br>
+<hr style="width:500px;">
+<br>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.first_name.label_tag }} {{ form.first_name }}
+    {{ form.last_name.label_tag }} {{ form.last_name }}
+    {{ form.email.label_tag }} {{ form.email }}
     <input type="submit">
 </form>
