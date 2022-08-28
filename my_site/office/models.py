@@ -24,7 +24,7 @@ class Patient(models.Model):
     '''
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} is precisely this age: {humanize.precisedelta(datetime.now(tz=timezone.utc) - self.dob)}."
+        return f"{self.first_name} {self.last_name} was born on {humanize.naturaldate(self.dob)} and is therefore precisely this age: {humanize.precisedelta(datetime.now(tz=timezone.utc) - self.dob)}."
 
     def __repr__(self):
-        return f"{self.first_name} {self.last_name} is precisely this age: {humanize.precisedelta(datetime.now(tz=timezone.utc) - self.dob)}."
+        return f"{self.first_name} {self.last_name} was born on {humanize.naturaldate(self.dob)} and is therefore precisely this age: {humanize.precisedelta(datetime.now(tz=timezone.utc) - self.dob)}."

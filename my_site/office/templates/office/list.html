@@ -1,0 +1,25 @@
+<center><h1>Section 11: Django Models, Databases, and Queries</h1></center>
+
+<h2>Collection of all Patients in DB in single Query call:</h2>
+<p>{{patients}}</p>
+
+<h2>Collection of all Patients in DB within for loop declared in template:</h2>
+<ul>
+    {% for person in patients %}
+        <li>{{ person }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Instantiated inside views.py:</h2><p>{{adam}}</p>
+
+<h2>Instantiated inside views.py but attributes referenced in templates:</h2>
+<p>First name: {{full_adam.first_name}}</p>
+<p>Last Name: {{full_adam.last_name}}</p>
+<p>DOB: {{full_adam.dob}}</p>
+
+<h2>Date of Birth Less Than or Equal To 1950!:</h2>
+<ul>
+    {% for person in dob_filtered %}
+        <li>{{ person }}</li>
+    {% endfor %}
+</ul>
