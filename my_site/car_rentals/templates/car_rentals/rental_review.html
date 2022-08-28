@@ -1,5 +1,7 @@
 <h1>Review Our Car Rental Business</h1>
 
 <form method="POST">
+    {% csrf_token %}
+    {{ form }}
     <input type="submit">
 </form>
