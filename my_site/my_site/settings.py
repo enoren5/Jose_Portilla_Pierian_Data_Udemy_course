@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*',]
 # Application definition
 
 INSTALLED_APPS = [
+    'car_rentals.apps.CarRentalsConfig',
     'dealership.apps.DealershipConfig',
     'office.apps.OfficeConfig',
     'my_app.apps.MyAppConfig',
