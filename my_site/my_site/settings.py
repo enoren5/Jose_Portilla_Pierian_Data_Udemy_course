@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*',]
 # Application definition
 
 INSTALLED_APPS = [
+    'dealership.apps.DealershipConfig',
     'office.apps.OfficeConfig',
     'my_app.apps.MyAppConfig',
     'django.contrib.admin',
