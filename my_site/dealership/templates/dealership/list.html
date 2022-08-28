@@ -1,5 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
-LIST
+<center><h2>Vehicles for Sale</h2></center>
+<!-- <div class='container'>
+    <ul>
+        {% for vehicle in vehicles %}
+            <li><strong>ID</strong>:{{vehicle.pk}} - <strong>Make</strong>: {{vehicle.brand}} - <strong>Year</strong>: {{vehicle.year}}</li>
+        {% endfor %}
+    </ul>
+</div> -->
+<style>
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 500px;
+      margin: 0 auto;
+      margin-top:50px;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    
+    </style>
+<table>
+    <tr>
+      <th>Identifier</th>
+      <th>Brand</th>
+      <th>Year</th>
+    </tr>
+    {% for vehicle in vehicles %}
+    <tr>
+      <td>{{vehicle.pk}}</td>
+      <td>{{vehicle.brand}}</td>
+      <td>{{vehicle.year}}</td>
+    </tr>
+    {% endfor %}
+    
+</table>
+
 {% endblock %}
