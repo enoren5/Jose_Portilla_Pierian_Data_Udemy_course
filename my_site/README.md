@@ -8,11 +8,11 @@
 #### <center>Notes to self for personal reference</center>
 
 ## MISSING IN ACTION:
-Sections (to be reviewed):
+Sections (to be re watched and to take notes):
 - 8
 - 9
 - 10 
-  - Filters: Lecture 63
+- Filters: Lecture 63
  
 ## Section 10: Lecture 60: Variables
 With this global variable declared inside views.py:
@@ -85,6 +85,29 @@ If I accidentally input incorrect data and wish to alter an existing entry in my
 >>> c.last_name = 'Smith'
 >>> c.save()
 ```
-### MORE : Section 11: Lectures 76, 77, 78, 79, 80, 81 :
+## MORE : Section 11: Lectures 76, 77, 78, 79, 80, 81 :
 Additional notes on Querying DB can be found in `office/views.py` and `office/templates/office/list.html`
 Those annotations cover material involving how to interface and interact with database in views and templates instead of Django shell
+
+## Section 12 : "Django Admin"
+What Jose Portilla called 'cars' app, I more accurately named it a 'dealership' app.
+Not only does this Section cover how to wire up model data to Django Admin but Jose also demonstrates how to Create, Read, Update, and Delete data in the database in `views.py` with templates. This app accepts web visitor car `brand` and `year` input, lists it, and gives an option to delete based on Django `pk` identifier.
+
+## Section 13 : "Django Forms" (cookie cutter built-in forms)
+For Jose Portilla's next app, he called it 'cars' again. But I named it 'car_rentals' since it's a basic website which accepts web visitor input to review the cars that they rented.
+
+## Section 13 : Lecture 91 : Widgets and Styling :
+Here is a sample from `forms.py`:
+```
+    review = forms.CharField(
+        label="Your comments go here", 
+        max_length=500,
+        widget=forms.Textarea(attrs={
+                'class':'myform', 
+                'rows':'25',
+                'cols':'25'}
+                )
+        )
+```
+Above you can see the `review` class attribute is a form input box that carries three arguments: (1) label, (2) max_length, and (3) a "widget"
+Here is the official Django documentation covering widgets but [specific to Textarea](https://docs.djangoproject.com/en/4.1/ref/forms/widgets/#textarea). The next argument is `attrs` which refers to the input box HTML tag attributes. The argument is a `dict()` type. There is `class` key and paired with  `myform` value which is a CSS class attribute (not to be confused with Python class attributes) that is located inside the newly created `custom.css` file which is stored in the app's `static` directory. The next item in the dictionary is `rows` key with `25` value that specifies the size of the input box. Take note that when Django serves the `rental_review.html`, the dashed red border surrounds the `review` input box because of how the `widget` argument is being formatted.
