@@ -98,6 +98,7 @@ For Jose Portilla's next app, he called it 'cars' again. But I named it 'car_ren
 
 ## Section 13 : Lecture 91 : Widgets and Styling :
 Here is a sample from `forms.py`:
+
 ```
     review = forms.CharField(
         label="Your comments go here", 
@@ -109,5 +110,6 @@ Here is a sample from `forms.py`:
                 )
         )
 ```
+
 Above you can see the `review` class attribute is a form input box that carries three arguments: (1) label, (2) max_length, and (3) a "widget"
 Here is the official Django documentation covering widgets but [specific to Textarea](https://docs.djangoproject.com/en/4.1/ref/forms/widgets/#textarea). The next argument is `attrs` which refers to the input box HTML tag attributes. The argument is a `dict()` type. There is `class` key and paired with  `myform` value which is a CSS class attribute (not to be confused with Python class attributes) that is located inside the newly created `custom.css` file which is stored in the app's `static` directory. The next item in the dictionary is `rows` key with `25` value that specifies the size of the input box. Take note that when Django serves the `rental_review.html`, the dashed red border surrounds the `review` input box because of how the `widget` argument is being formatted.
