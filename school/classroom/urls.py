@@ -1,9 +1,10 @@
 from django.urls import path
-from .views import home_view, HomeView, ThankYouView
+from .views import home_view, HomeView, ThankYouView, ContactFormView
 
 app_name = 'classroom'
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
-    path('thanks/', ThankYouView.as_view(), name='thanks')
+    path('thank_you/', ThankYouView.as_view(), name='thank_you'),
+    path('contact/', ContactFormView.as_view(),name='contact'),
 ]
