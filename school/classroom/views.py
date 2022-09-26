@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse,reverse_lazy
-from django.views.generic import TemplateView, FormView, CreateView
+from django.views.generic import TemplateView, FormView, CreateView, ListView
 from classroom.forms import ContactForm
 from classroom.models import Teacher
 
@@ -29,3 +29,9 @@ class TeacherCreateView(CreateView):
     # automatically implements: `.save`
     fields = "__all__"
     success_url = reverse_lazy('classroom:thank_you')
+    
+    
+class TeacherListView(ListView):
+    # model_list.html
+    model = Teacher
+    
