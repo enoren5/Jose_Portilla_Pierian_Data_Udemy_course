@@ -1,10 +1,11 @@
 # URLS Catalog 
-from django.urls import path 
+from django.urls import path, include
 from . import views 
 
 
 urlpatterns = [
     path('',views.index,name='index'),
     path('create_book/',views.BookCreate.as_view(),name='create_book'),
-    path('book/<int:pk>/',views.BookDetail.as_view(),name='book_detail')
+    path('book/<int:pk>/',views.BookDetail.as_view(),name='book_detail'),
+    path('accounts/',include('django.contrib.auth.urls'))
 ]
