@@ -1,13 +1,13 @@
 {% if form.errors %}
-    <p>Your username or password was incorrect. Try again.</p>
+    <p style="color:crimson;">Your username or password was incorrect. Try again.</p>
 {% endif %}
 
 {% if next %}
     {% if user.is_authenticated %}
-        <p>You dont have permission for this page</p>
+        <p style="color:crimson;">You dont have permission for this page</p>
 
     {% else %}
-        <p>Please login to see this page</p>
+        <p style="color:crimson;">Please login to see this page</p>
     {% endif %}
 {% endif %}
 

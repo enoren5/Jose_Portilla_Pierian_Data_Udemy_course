@@ -7,7 +7,14 @@
 </head>
 <body>
     <h1>HOMEPAGE</h1>
-    <p>Total Books: {{num_books}}</p>
-    <p>Num Available: {{num_instances_avail}}</p>
+    {% if user.is_authenticated %}
+        <p style="color:green;"> You are logged in. Welcome {{user.get_username}}!</p>
+        <a href="{% url 'logout' %}?next={{next.path}}"> Log out? </a>
+    {% else %}
+        <p style="color:navy;">You are not logged in</p>
+        <a href="{% url 'loging' %}?next={{next.path}}"> Login? </a>
+    {% endif %}
+    <p>Total Books: {{ num_books }}</p>
+    <p>Num Available: {{ num_instances_avail }}</p>
 </body>
 </html>
